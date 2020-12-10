@@ -1,0 +1,52 @@
+
+        <div class="new">
+            <div class="albumsheader">
+                <h2>New releases</h2>
+            </div>
+            <div class="albums">
+                {{#each playlists}}
+                <div class="onealbum" id={{this.id}}>
+                    <img src="{{this.photopath}}" alt="">
+                    <p class="onealbum_name">{{this.playlistname}}</p>
+                    <p class="onealbum_author">{{this.author}}</p>
+                </div> 
+                {{/each}}
+                <div class="morealbums">
+                    <a href="/allalbums"><img src="/static/img/seemore.svg" alt=""></a>
+                    <p class="onealbum_name">See more</p>
+                </div>
+            </div>
+        </div>
+        <div class="top">
+            <div class="topheader">
+                <h2>Top 10</h2>
+            </div>
+            <div class="topaudio">
+                {{#each audios}}
+                    <div class="oneaudio" id={{this.id}} onmouseover="actionshow(this)" onmouseout="actionhide(this)">
+                        <audio src="{{this.audiopath}}"></audio>
+                        <div class="audioimg" onclick="playpause(this)">
+                            <img src="{{this.photopath}}" alt="">
+                            <div class="overlay">
+                                <img src="/static/img/play.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="audioinfo">
+                            <div class="namesinder">
+                                <p class="auidoname">{{this.audioname}}</p>
+                                <p class="singer">{{this.singet}}</p>
+                            </div>
+                            <div class="addinplaylist" onclick="add_in_playlist_modal()" onclick="dropdown_playlists()">
+                                <img src="/static/img/addinplaylist.svg" alt="">
+                            </div>
+                            <div class="addinmedia" onclick="addinmedia(this)">
+                                <img src="/static/img/add.svg" alt="">
+                            </div>
+                            <div class="length">
+                                <p class="audiolength">{{this.length}}</p>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>

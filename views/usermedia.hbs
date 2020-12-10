@@ -1,0 +1,31 @@
+{{#if isempty}}
+    <div class="emptyblock">
+        <h3>Your library is still empty</h3>
+    </div>
+{{else}}
+        <div class="audios">
+            {{#each audios}}
+            <div class="oneaudioinmedia" id={{this.id}} onmouseover="actionshow(this)" onmouseout="actionhide(this)">
+                <audio src="{{this.audiopath}}"></audio>
+                <div class="audioimginmedia" onclick="playpause(this)">
+                    <img src="{{this.photopath}}" alt="">
+                    <div class="overlay">
+                        <img src="/static/img/play.svg" alt="">
+                    </div>
+                </div>
+                <div class="audioinfoinmedia">
+                    <div class="namesinder">
+                        <p class="auidoname">{{this.singet}}</p>
+                        <p class="singer">{{this.audioname}}</p>
+                    </div>
+                    <div class="delete_from_media" onclick="delete_from_media(this)">
+                        <img src="/static/img/delete.svg" alt="">
+                    </div>
+                    <div class="length">
+                        <p class="audiolength">{{this.length}}</p>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+{{/if}}

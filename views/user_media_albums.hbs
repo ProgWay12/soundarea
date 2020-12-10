@@ -1,0 +1,15 @@
+{{#if isempty}}
+    <div class="emptyblock">
+        <h3>You haven't added playlists yet</h3>
+    </div>
+{{else}}
+        <div class="media_albums">
+            {{#each albums}}
+            <div class="media_onealbum" id={{this.id}}>
+                <img src="{{this.photopath}}" alt="">
+                <p class="onealbum_name">{{this.playlistname}}</p>
+                <p class="onealbum_author">{{this.author}}</p>
+            </div> 
+            {{/each}}
+        </div>
+{{/if}}

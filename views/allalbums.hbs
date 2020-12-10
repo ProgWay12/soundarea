@@ -1,0 +1,14 @@
+<div class="new">
+    <div class="albumsheader">
+        <h2>All releases</h2>
+    </div>
+    <div class="albums">
+        {{#each playlists}}
+        <div class="onealbum" id={{this.id}}>
+            <img src="{{this.photopath}}" alt="">
+            <p class="onealbum_name">{{this.playlistname}}</p>
+            <p class="onealbum_author">{{this.author}}</p>
+        </div> 
+        {{/each}}
+    </div>
+</div>

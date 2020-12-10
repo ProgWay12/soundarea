@@ -1,0 +1,28 @@
+<div class="container">
+    <main class="mainform">
+        <h1>SoundArea</h1>
+        <form action="/newaudio" method="POST" enctype="multipart/form-data">
+            <input type="text" name="singer" id="" placeholder="Истолнитель"> <br><br>
+            <input type="text" name="name" id="" placeholder="Название композиции"> <br><br>
+            <div class="photo_and_audio" onclick="newphoto(this)">
+                <div class="mainform_new_avatar">
+                    <img src="/static/img/avatar.svg" alt="">
+                </div>
+                <div class="photo_and_audio_info">
+                    <p>Add cover</p>
+                </div>
+            </div>
+            <div class="photo_and_audio" onclick="newphoto(this)">
+                <div class="mainform_new_avatar">
+                    <img src="/static/img/audio.svg" alt="">
+                </div>
+                <div class="photo_and_audio_info">
+                    <p>Add cover</p>
+                </div>
+            </div>
+            <input type="file" id="newaudio" name="photo" onchange="change(this)"/>
+            <input type="file" id="newaudio" name="audio" onchange="change(this)"/>
+            <input type="submit" value="Send" />
+        </form>
+    </main>
+</div>

@@ -1,0 +1,24 @@
+{
+  "name": "portfile3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ProgWay",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "connect": "^3.7.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "express-session": "^1.17.1",
+    "fs": "0.0.1-security",
+    "get-mp3-duration": "^1.0.0",
+    "hbs": "^4.1.1",
+    "multer": "^1.4.2",
+    "mysql2": "^2.1.0",
+    "ymaps": "^0.2.1"
+  }
+}

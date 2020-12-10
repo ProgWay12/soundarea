@@ -1,0 +1,63 @@
+<div class="user_creativity_add_audio_or_album">
+    <div class="user_creativity_add_audio">
+        <div class="user_creativity_add_audio_p">
+            <a href="/newaudio"><p>Add audio</p></a>
+        </div>
+    </div>
+    <div class="user_creativity_add_album">
+        <div class="user_creativity_add_album_p">
+            <a href="/newplaylist"><p>Add album</p></a>
+        </div>
+    </div>
+</div>
+{{#if isnotemptyplaylists}}
+<div class="new">
+    <div class="albumsheader">
+        <h2>Your albums</h2>
+    </div>
+    <div class="albums">
+        {{#each playlists}}
+        <div class="onealbum" id={{this.id}}>
+            <img src="{{this.photopath}}" alt="">
+            <p class="onealbum_name">{{this.playlistname}}</p>
+            <p class="onealbum_author">{{this.author}}</p>
+        </div> 
+        {{/each}}
+    </div>
+</div>
+{{/if}}
+{{#if isnotemptyaudios}}
+<div class="new">
+    <div class="albumsheader">
+        <h2>Your audios</h2>
+    </div>
+    <div class="audios">
+        {{#each audios}}
+        <div class="oneaudioinmedia" id={{this.id}} onmouseover="actionshow(this)" onmouseout="actionhide(this)">
+            <audio src="{{this.audiopath}}"></audio>
+            <div class="audioimginmedia" onclick="playpause(this)">
+                <img src="{{this.photopath}}" alt="">
+                <div class="overlay">
+                    <img src="/static/img/play.svg" alt="">
+                </div>
+            </div>
+            <div class="audioinfoinmedia">
+                <div class="namesinder">
+                    <p class="auidoname">{{this.singet}}</p>
+                    <p class="singer">{{this.audioname}}</p>
+                </div>
+                <div class="delete_from_media" onclick="delete_from_media(this)">
+                    <img src="/static/img/delete.svg" alt="">
+                </div>
+                <div class="length">
+                    <p class="audiolength">{{this.length}}</p>
+                </div>
+                <div class="length">
+                    <p class="audiolength">{{this.listenings}}</p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+{{/if}}

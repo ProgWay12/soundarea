@@ -1,0 +1,44 @@
+<div class="modal_create_playlist">
+        <div class="modal_create_playlist-content">
+            <div class="modal_create_playlist-body">
+                <div class="modal_create_playlist_body_avatar" onclick="newphoto(this)">
+                    <img src="/static/img/avatar.svg" alt="">
+                </div>
+                <div class="modal_create_playlist_form">
+                    <form action="/new_user_playlist" method="POST" enctype="multipart/form-data">
+                        <input type="file" name="photo" id="" onchange="change(this)">
+                        <input type="text" name="playlistname" id=""> <br> <br>
+                        <input type="submit" value="Create">
+                    </form>
+                </div>
+            </div>
+        </div>
+</div>
+{{#if isempty}}
+    <div class="emptyblock">
+        <h3>You haven't created playlists yet</h3>
+        <div class="create_playlist" onclick="visibility_modal_of_adding_playlist()">
+            <div class="create_playlist_inner">
+                <div class="create_playlist_img">
+                    <img src="/static/img/add.svg" alt="">
+                </div>
+                <div class="create_playlist_info">
+                    <p>Create</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{{else}}
+    <div class="media_useralbums">
+            {{#each playlists}}
+            <div class="media_one_useralbum" id={{this.id}}>
+                <img src="{{this.photopath}}" alt="">
+                <p class="onealbum_author">{{this.playlistname}}</p>
+            </div> 
+            {{/each}}
+            <div class="media_one_useralbum_add" onclick="visibility_modal_of_adding_playlist()" id={{this.id}} >
+                <img src="/static/img/add.svg" alt="">
+                <p class="onealbum_author">Add</p>
+            </div>
+    </div>
+{{/if}}

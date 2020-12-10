@@ -1,0 +1,38 @@
+<div class="container">
+    <main class="mainform">
+        <h1>SoundArea</h1>
+        <form action="/newplaylistdowload" method="POST" enctype="multipart/form-data">
+            <input type="text" name="singer" id="singer" placeholder="Истолнитель"> <br><br>
+            <input type="text" name="name" id="playlistname" placeholder="Название Альбома"> <br><br>
+            <div class="photo_and_audio_for_playlist" onclick="newphoto(this)">
+                <div class="mainform_new_avatar">
+                    <img src="/static/img/avatar.svg" alt="">
+                </div>
+                <div class="photo_and_audio_info">
+                    <p>Add cover</p>
+                </div>
+            </div>
+            <input type="file" name="photo" id="preview" onchange="change(this)"/>
+            <div class="playlist-addaudio-all" id="playlist-addaudio-all">
+                <div class="playlist-oneaudio-add">
+                    <input type="text" name="audioname0" id="" placeholder="Название трека"> <br><br>
+                    <div class="photo_and_audio_for_playlist" onclick="newphoto(this)">
+                        <div class="mainform_new_avatar">
+                            <img src="/static/img/audio.svg" alt="">
+                        </div>
+                        <div class="photo_and_audio_info">
+                            <p>Add cover</p>
+                        </div>
+                    </div>
+                    <input type="file" id="newplaylist" name="audio" onchange="change(this)"/>
+                </div>
+            </div>
+            <div class="playlist-newaudio-btn" id="playlist-newaudio-btn">
+                <div class="playlist-newaudio-btn-p">
+                    <p>Добавить еще</p>
+                </div>
+            </div>
+            <input type="submit" value="Send" id="newplaylistsubmit" />
+        </form>
+    </main>
+</div>

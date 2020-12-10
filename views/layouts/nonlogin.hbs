@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoundArea</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body onload="controls()">
+    <nav class="menu">
+        <div class="container">
+            <ul class="mainmenuul">
+                <li class="menulogo"><div class="logo"><a href="/"><h1>SoundArea</h1></a></div></li>
+                <li class="menuelems login"><a href="/login">Sign in</a></li>
+                <li class="menuelems create"><a href="/register">Sign up</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-header-img">
+                    <img id="playlist-img" src="/static/img/1.jpg" alt="">
+                </div>
+                <div class="modal-header-info">
+                    <div class="modal-header-info-playlistname">
+                        <p id="playlist-name">One More City</p>
+                    </div>
+                    <div class="modal-header-info-singer">
+                        <p id="playlist-author">ЛСП</p>
+                    </div>
+                    {{#if ismedia}}
+                    <div class="modal-header-addinmedia" onclick="delete_playlist(this)">
+                        <div class="modal-header-addinmedia-img">
+                            <img src="/static/img/delete.svg" alt="">
+                        </div>
+                        <p>Удалить</p>
+                    </div>
+                    {{else}}
+                    <div class="modal-header-addinmedia" onclick="add_album_in_media(this)">
+                        <div class="modal-header-addinmedia-img">
+                            <img src="/static/img/add.svg" alt="">
+                        </div>
+                        <p>Добавить</p>
+                    </div>
+                    {{/if}}
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="audios">
+                    <div class="modal-oneaudio" id={{this.id}}>
+                        <audio src="{{this.audiopath}}"></audio>
+                        <div class="modal-audioimg" onclick="playpause()">
+                            <img src="/static/img/play.svg" alt="">
+                        </div>
+                        <div class="modal-audioinfo">
+                            <div class="modal-namesinder">
+                                <span class="modal-auidoname">Два</span><span class="space"> - </span><span class="modal-singer">ЛСП</span>
+                            </div>
+                            <div class="modal-oneaudio-addinmedia" onclick="addinmedia(this)">
+                                <img src="/static/img/add.svg" alt="">
+                            </div>
+                            <div class="modal-length">
+                                <p>3:29</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="modal_add_in_playlist">
+            <div class="modal_add_in_playlist-content">
+                <div class="modal_add_in_playlist-body">
+                    <div class="modal_add_in_playlist_useralbums">
+                        <div class="media_one_useralbum_add" onclick="visibility_modal_of_adding_playlist()" id={{this.id}} >
+                            <img src="/static/img/newplaylist.svg" alt="">
+                            <p class="onealbum_author">Добавить</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <main>
+            <div class="welcomeblock">
+                <div class="welcometext">
+                    <p class="firstrow">Connect on SoundArea</p>
+                    <p class="secondrow">Discover, stream, and share a constantly expanding mix of music from emerging and major artists around the world.</p>
+                    <div class="newacc">
+                        <a href="/register">Sign up</a>
+                    </div>
+                </div>
+            </div>
+            <div class="search">
+                <input type="text" id="searchinput" placeholder="Поиск музыки">
+                <div class="loupe" onclick="search()">
+                    <img src="/static/img/loupe.svg" alt="">
+                </div>
+            </div>
+            {{{body}}}
+        </main>
+    </div>
+    
+
+    <footer>
+       <div class="container">
+           <div class="audioplayer">
+                <div class="playerimg">
+                    <img src="/static/img/1.jpg" alt="">
+                </div>
+                <div class="playerinfo">
+                    <div class="playernamesinder">
+                        <span class="playerauidoname">Два</span><span class="space"> - </span><span class="playersinger">ЛСП</span>
+                    </div>
+                    <audio id="footeraudio" controls onended="nextaudio()">
+                        <source src="/static/audio/A4 - KIDS.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+           </div>
+       </div>
+    </footer>
+
+    <script src="/static/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<div class="container">
+    <main class="mainform">
+        <h1>SoundArea</h1>
+        <div class="mainform_body">
+            <div class="mainform_avatar" onclick="newphoto(this)">
+                <img src="/static/img/avatar.svg" alt="">
+            </div>
+            <form action="/register" method="POST" enctype="multipart/form-data">
+                <input type="file" name="photo" id="" onchange="change(this)">
+                <input type="text" name="username" id=""> <br> <br>
+                <input type="password" name="password" id=""> <br> <br>
+                <input type="submit" value="Create">
+            </form>
+        </div>
+    </main>
+</div>
