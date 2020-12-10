@@ -70,7 +70,6 @@ app.use(session({
 app.use('/static', express.static(__dirname + '/static'));
 
 const pool = mysql.createPool({
-    connectionLimit: 5,
     host: "remotemysql.com",
     port: 3306,
     user: "7TZ0WshgWZ",
