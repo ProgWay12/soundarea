@@ -71,11 +71,11 @@ app.use('/static', express.static(__dirname + '/static'));
 
 const pool = mysql.createPool({
     connectionLimit: 5,
-    host: "127.0.0.1",
+    host: "remotemysql.com",
     port: 3306,
-    user: "ProgWay",
-    password: "Aka080115",
-    database: "SoundArea"
+    user: "7TZ0WshgWZ",
+    password: "EABZzQfuZQ",
+    database: "7TZ0WshgWZ"
 });
 
 app.get("/", (req, res) => {
