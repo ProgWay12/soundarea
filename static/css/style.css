@@ -4,6 +4,7 @@
 
 body {
     background-color: rgb(228,233,242);
+    text-rendering: optimizeLegibility;
 }
 
 ul {
